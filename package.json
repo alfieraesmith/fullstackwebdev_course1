@@ -1,0 +1,24 @@
+{
+  "name": "fullstackwebdev_course1",
+  "version": "1.0.0",
+  "description": "This is a course1 for full stack web development course",
+  "main": "index.html",
+  "scripts": {
+    "start":"npm run lite",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lite": "lite-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alfieraesmith/fullstackwebdev_course1.git"
+  },
+  "author": "Alfie Smith",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alfieraesmith/fullstackwebdev_course1/issues"
+  },
+  "homepage": "https://github.com/alfieraesmith/fullstackwebdev_course1#readme",
+  "devDependencies": {
+    "lite-server": "^2.4.0"
+  }
+}
