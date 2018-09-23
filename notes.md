@@ -284,6 +284,68 @@ update the package.json file -
   },
 ```
 
+Front-end Web UI frameworks: 
+
+what are Front-end web ui framework: 
+
+Collection of ready-to-use HTML, CSS 
+and JavaScript templates for UI components. 
+
+Web UI frameworks developed naturally out of the 
+desire to re-use blocks of CSS, HTML and JS
+across web applications. 
+
+Prior to the open-source movement, every company 
+ended up developing their own set of CSS classes,
+HTML patterns and JS functions and re-using them
+across their products. 
+
+This led to third-parties offering these components 
+and eventually to widely used open-source frameworks. 
+
+The typical components of a framework are:
+*Typography - consistent across website design
+*Forms
+*Buttons,
+*Tables,
+*Navigations
+*Dropdowns
+*Alerts
+*Modals
+*Tabs
+*Accordion
+*Carousel. 
+
+Frameworks also come with a philosophy and set of patterns
+that let developers use their tools, across versions,
+to quickly implement a scaffolding. 
+
+Popular front-end frameworks:
+1. Bootstrap
+2. Semantic-Ui
+3. Foundation
+4. Material UI
+5.Materialize
+6. UIKit. 
+
+why use them? 
+1. increased productivity - easy to use and reuse
+    across multiple webpages and sites. 
+2. Cross-browser compatibiltiy 
+    many frameworks handle the differences between
+    different browsers/devices/versions
+3. Responsive web design
+   Framework elements adapt to mobile vs desktop
+   Bootstrap, like many, has a "Mobile First"
+4. Pre-built consistency - Bootstrap org has spent
+    millions ensuring that even their niche 
+    components fit into the framework.
+5. Community support 
+6. Can purchase really specific support or 
+   additional products (scalability.)
+
+Getting started with Bootstrap:
+
 
 
 
