@@ -346,6 +346,101 @@ why use them?
 
 Getting started with Bootstrap:
 
+retrieve the course package.json from 
+https://www.coursera.org/learn/bootstrap-4/supplement/kXErq/exercise-instructions-getting-started-with-bootstrap
+
+move to git repo working directory and npm install.
+
+We'll use specific versions in this course to avoid any versioning issues.
+execute the following commands to install the right npm packages. 
+
+ npm install bootstrap@4.0.0 --save
+ npm install jquery@3.3.1 popper.js@1.12.9 --save
+ 
+ Note: bootstrap doesn't install it's companion libraries (jQuery and Popper)
+by default and this is good because we need specific versions. 
+
+Look in node_modules/bootstrap/dist/css and node_modules/bootstrap/dist/js
+these are all the components we get for free with bootstrap 4.00 distribution.
+
+Two files are of particular interest for now -
+ node_modules/bootstrap/dist/css/bootstrap.css.min
+  node_modules/bootstrap/dist/css/bootstrap.js.min
+  
+We'll include these in our index.html file to run every time we start
+a lite-server. 
+
+# Running basic bootstrap when web site launches - 
+
+insert the following between the <head> tags in index.html
+```html
+<!-- Required meta tags always come first -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+```
+meta tags - 
+
+charset: setting the unicode that will be used
+viewport: 
+http-equiv: 
+
+and one <link> tag - 
+
+This link tag is linking the webpage to a css sytle sheet
+and telling the browser where to find the style sheet. 
+
+We also need to reference the bootstrap JS elements.
+Like most JS elements, we reference in the body AFTER 
+the webpage HTML is defined. 
+
+Insert this as the final code before the closing body tag </body>
+
+```html
+ <!-- jQuery first, then Popper.js, then Bootstrap JS. -->
+    <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+```
+
+This tells the browser to load the following JS libraries:
+jQuery,
+Popper
+Bootstrap JS plugins 
+
+Note: the order is important because Bootstrap depends on jQuery and Popper
+and may fail when it loads.
+
+Why load the CSS at start and JS libs at the end of the page?
+
+1. We load the CSS at the start, head tags render first, because 
+we only want the user to see the web page with styling applied. 
+This is crucial to the user experience.
+
+2. We load JS last because they take a while and we don't want
+the user waiting for content while libs, that probably aren't
+required for the first rendering of the page, to get their
+source code. 
+
+
+
+
+
+
+
+
+
+
+
+This is the file 
+
+
+
+
+
 
 
 
