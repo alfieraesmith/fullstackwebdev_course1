@@ -385,7 +385,10 @@ insert the following between the <head> tags in index.html
 meta tags - 
 
 charset: setting the unicode that will be used
-viewport: 
+viewport: when our webpage is being rendered by browser, set the 
+          screen width assumed in HTML to the device width.
+          This is key to designing websites that are responsive to 
+          user's viewport. 
 http-equiv: 
 
 and one <link> tag - 
@@ -425,26 +428,334 @@ the user waiting for content while libs, that probably aren't
 required for the first rendering of the page, to get their
 source code. 
 
+# Building up the webpage styling with Bootstrap
+
+So far, we've only implemented bootstrap.css.min and bootstrap.js.min.
+bootstrap.css.min changes the font styling, list styling and header styling. 
+
+This web page still isn't "pretty" 
+
+#Responsive design and 'mobile first' approach.
+
+#Responsive Design 
+
+Traditionally, developers assumed all websites were being accessed from
+a computer. However, the one size fits approach is no longer possible.
+
+Now, developers have to be aware that users will be accessing their 
+website from browsers running on tablets, phones, phablets, televisions etc.
+
+Each one comes with its own screen dimensions, resolution etc. 
+
+Responsive design: designing content that's responsive to the user's "viewport"
+
+You can see any website being rendered across viewports by accessing
+the developer console/devices.
+
+Example: a navigation bar will often convert to a button when 
+the accessed from a mobile device. The button, when clicked, will then
+show the navigation bar. 
+
+# Mobile First:
+
+Designing content as if the viewport was a mobile device.
+This approach assumes that web page will be viewed by mobile devices so 
+shows only a subset of content by default. 
+
+The developer then determines what content will be shown as the 
+viewport expands. 
+
+# Foundations of Responsive Design 
+
+* Grid System - specifically Bootstrap's grid system - method of dividing the page. 
+* Fluid images - automatically adapting images
+* CSS Media queries - query size of media and appropriately change CSS
+                      classes to fit size of screen
+
+# Bootstrap Grid System
+
+CSS flexbox grids lets developer perform easy vertical alignment 
+within a parent element. 
+CSS flexbox grids allow for easy reordering of content across
+devices and screen resolutions, with the help of media queries. 
+
+How Bootstrap grid works:
+
+Bootstrap grid works by applying a container class to a section of 
+the web page or the whole page.
+
+The container can be set to resize (width/length) in response to 
+media queries telling the container what the device screen size is. 
+
+Within the container - content is ordered in rows.
+
+Within rows - content is divided into 12 columns.
+Developer then specifies, for each screen width, how many columns each 
+piece of content will occupy with a row. 
+
+The number of columns is often defined in reference to a screen size 
+by linking a column class (see below) to a number of columns. 
+
+
+Bootstrap makes available 5 classes for defining screen sizes.
+1. default - all screen sizes from ex small to ex large
+2. sm for small
+3. md for medium
+4. lg for large
+5. xl for extra large. 
+
+```html
+<div class="container"></div>
+    <div class = row > </div>
+        <div class = "col-sm-5"></div>
+        <div class = "col-sm-7"></div>
+    <div class = row > </div>
+    <div class = row > </div>
+```
+This is saying that the first piece of content will occupy 5 columns for 
+all screen sizes that are AT LEAST SMALL (sm - XL.
+Furthermore, the second piece of content will occupy the remaining 7 
+columns iff the screen size is at least 'small' size. 
+
+Alternatively, we can leave the col size blank and allow the browser
+to fill the content in the remaining size. For example - 
+
+
+```html
+<div class="container"></div>
+    <div class = row > </div>
+        <div class = "col-sm"></div>
+        <div class = "col-sm-6"></div>
+        <div class = "col-sm></div>
+```
+
+This is saying, within the first row, if the screen is at least small 
+(>540px) make the middle content fill up 6 columns. Allow the other two
+pieces of content to fill the other spaces. Typically, this 
+would be 3 columns width on each size. 
+
+Gutter width: default is 30px: white space that's automatically 
+applied between content in neighbouring cols.
+This can be overriden to whatever the dev requires. 
+You can think of gutter width as the spaces between articles in 
+a newspaper. 
+
+Using column size and order -- 
+```html
+<div class = "col-sm-5 order-sm-last"></div>
+<div class = "col-sm-7 order-sm-first"></div>
+```
+
+For the above content, on ex small screens, div1 content
+will be stacked ontop of div 2.
+on sm> screens, div 2 content will be displayed to the left
+of div tag 2. 
+
+On  extra small screens: 
+Bootstrap will automatically reorder the content so that
+the content is stacked in order of div tags. 
+
+Why stack content? 
+This is because we've provided no speicifcation for the width,
+of each content for ex small screens.
+both pieces of content have speec that applies to > sm only.
+
+On sm > screens, 
+The order attribute refers to content when displayed 
+NEXT TO EACH OTHER.
+
+So on sm> screens, the second div tag's content will be displayed
+to the the LEFT.
+
+You can also use order numericalaly (1-12). This range is set
+because there's only 12 columns and content cannot compromise
+less than one col. You can however nest content within other content.
+
+Nesting:
+
+within a col div tag, you can set another row 
+with another set of col tags. This provides 
+additional flexibility to content layout. 
 
 
 
 
+# Media queries - 
+CSS tech to apply some styles based on size of viewport
+```css
+@media(min-width:992px){
+.container{
+ width: 540px;
+ max-width:100%;
+    }
+}
+```
+This tells the browser - perform a media query (get info about view port)
+and only display the container css iff it meets min width. 
 
 
+# Navigation:
+
+Websites are rarely signle pages, so developers have to 
+think about how users can intuitively get around 
+different web pages.
+
+Information Architecture: 
+Structure of a system with a respect to the way info is
+*organised
+*labeled
+*navigation methods. 
+
+This tends to fall into the speciality of website design.
+Web designers put a lot of thought into what 
+info the website is trying to offer the user and how
+the user is expected to find and navigate it. 
+
+We'll keep toa simple ifnformation architecture throughout
+this course without much design thought, focusing on
+the implementation of navigation
+
+Information architecture is traditionally modelled 
+hierarchically using a website tree.
+ 
+
+                                           Home
+                                            |
+                                            |
+               About                    Menu                          Contact
+    History  Key Players     Appetizers  Mains  Desserts Specials 
+
+Home is the top level of the website architecture 
 
 
+Methods for implementing navigation:
 
+# Navigation Bars:
+Most common navigation device 
 
-This is the file 
+A page spannning content element containing 
+links to various pages within your webstie. 
 
+Do's and Don'ts of nav bars:
 
++ simple, user-friendly terms
++ standardize navigation across website heirachy 
+    always know how to go up/down/across heirachy. 
++ provide indication of the location within 
+    nav heirarchy 
++ use standard web conventions
+    e.g. clicking on logo takes back to home page. 
 
+-- Don't have too many items
+-- Use generic labels 
 
+# Breadcrumbs - 
 
+These are typically provided somewhere in web page 
+usually near top/edge of the web page. 
 
+Breadcrumbs indicate navigational heir within which
+the user is currently in.
 
+This is a secondary navigation option other than
+nav bars. 
 
+Could indicate where the user is/where they have visited
+and how to get to next level. 
 
+Other nav tools: 
+
+Tabs,
+Pills
+Accordions
+Pagination,
+Dropdowns,
+Affix,
+Taxs,
+Scrollspy. 
+
+Icon Fonts:
+
+Icon fonts are sets of tiny images/symbols/glpyhs
+that are styled like text. 
+
+They can be styled with an css text styles and so 
+there's a good cohesion between text and image. 
+
+These give users a nice visual que next to text 
+to indicate common features like returning to home.
+
+Furthermore, icon fonts are often sen as lightweight
+replacements for simple graphics.
+
+Lastly, icon packs create consistency across websites
+allowing users to recognise across sites/pages
+ques for navigation.
+
+Font Awesome -
+    - very popular icon font 
+    - free and widely used.
+    
+To use Font Awesome, and most icon packs, all you 
+have to do is download the .css files and 
+apply a class to either an <i> or <span> tag.
+
+Social buttons:
+These are just a set of icon fonts that link
+users to a companies specific social profiles. 
+
+How to get Font Awesome and Bootstrap social .css files - 
+
+We can use Node Package Manager to get both sets of 
+icon fonts. 
+
+ npm install font-awesome --save
+ npm install bootstrap-social@5.1.1 --save
+ 
+ * installs font awesome and bootstrap-social
+   and saves both as package dependencies. 
+ 
+ Next we have to add both to every webpage that will use
+ them 
+ ```html
+   <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+   <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
+ ```
+ 
+ Then we have to make use of these icons - see index.html
+ 
+ # user input:
+ 
+ * filling in forms (login/sign up)
+ * typing into text boxes (search)
+ * clicking on buttons or prompts 
+ 
+ history of user interaction:
+ 
+ early interaction was mostly <a> tags to provide hyperlinks
+ 
+ However, the invention of buttons (<button>) and forms (<form>)
+ have added new methods of user-interaction.
+ 
+ <button> is general, loosely defined, tag that provides a wide
+ range of interactiontivity.
+ 
+ buttons inside forms almost always submit or amend the form
+ buttoms outside of forms  have much wider 
+ users but often change webpage content or redirect the user.
+ 
+ The core form elements are:
+ 
+ <input> - type - text/password/submit/radio/search/url/date
+ <textarea>
+ <button> - usually used to change/submit form
+ <select> 
+ 
+ 
+ 
+ 
+ 
+    
 
 
 

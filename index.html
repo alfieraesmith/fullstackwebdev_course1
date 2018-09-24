@@ -4,56 +4,205 @@
 <head>
     <!-- Required meta tags always come first -->
     <meta charset="utf-8">
+    <!--Tell Bootrap to capture data about view port-->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-    <!-- Bootstrap CSS -->
+    <!-- Bootstrap basic layer of CSS syling -->
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <!-- Add Icon Fonts Font Awesome and Bootstrap-social -->
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
+
+    <!-- Add the custom CSS page we created and all its custom classes -->
+    <link rel="stylesheet" href="css/styles.css">
     <title>Ristorante Con Fusion</title>
 </head>
 
 <body>
+    <!--
+    Building a navigation bar using BootStrap:
 
-    <header>
-        <div>
-            <div>
-                <div>
+    1. nav tags are the basic html tags for a nav bar.
+
+    2. We'll use a pre-configured BootStrap class rather than
+       building a navigation bar from scratch using args.
+
+       We can layer on additional classes to provide
+       a much richer navigation bar styling than the
+       base bootstrap class 'navbar' has in itself.
+
+    3. We add some color using he "navbar-dark" class
+       to style the nav bar in BS's dark theme. There's also navbar-light.
+
+    4. navbar-expand-sm: this class makes our nav bar,
+       for small/ex screens, a toggle instead.
+       We have to add the collapse plugin to use this
+       functionality.
+
+    5. bg-primary: set the background for the navbar
+     THIS ARG HAS BEEN REMOVED AND REPLACED WITH
+     BACKGROUND COL IN OVER-LOADED CLASS IN styles.css
+
+    6. fixed-top: this is a neat/subtle feature. The
+        navbar will remain at the top of the page,
+        even when user scrolls down. This gives them
+        navigation access after reading the doc without
+        having to scroll back up.
+
+        The default is 'static-top' which makes the nav bar
+        static as the user scrolls down.
+
+    7. We've used containers (BS grid system) to define
+        the width of the web page's content depending
+        on the size of view port. We'll continue this
+        with nav bar by putting all nav bar CONTENT
+        in a div container.
+
+    -->
+    <nav class="navbar navbar-dark navbar-expand-sm fixed-top">
+        <div class="container">
+            <!-- Responsive Design element:
+             A button (toggler) that will replace the nav bar
+             unless clicked.
+
+             Navbar-toggler-icon:
+             the triple-lines is a standard icon across websites
+             , which BS provides, for marking a toggle button
+             so user's know to click to reveal nav bar.
+
+             Note: data-toggle is actually a JavaScript component implemented
+             by BS. JS components often have data-* naming convention -->
+
+            <button class="navbar-toggler" type=button data-toggle="collapse" data-target="#Navbar">
+                <span class="navbar-toggler-icon"> </span>
+            </button>
+            <!-- make our brand (Restraunt name) link back to home page
+               initially we can just use some text 'Restorante con Fusion' but afterwards
+               we'll use the logo.
+
+               mr-auto: automatically introduce white margine around nav-bar-barnd
+            -->
+          <a class="navbar-brand mr-auto" href="#"> Restorante con Fusion </a>
+                <!-- we create the actual set of navigation buttons by using
+                 an un-numbered list and wrapping BS' navbar-nav class around it
+
+                 mr-auto: utility class that sets the alignment styling.
+                 will force navbar elements to the furthest left.
+                 -->
+                <div class="collapse navbar-collapse" id="Navbar">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <!-- Active is just a styling class that can be used
+                        to highlight one link. This is generally used to
+                        highlight the same page to show
+                        user which page they're currently on-->
+
+                        <!-- We've installed font awesome icon fonts using NPM
+                             added the stylesheet to head tag
+                             now we need to reference a specific icon for our home
+                             button
+                             fa fa-home is saying font awesome package fa-home icon
+                              fa-lg is just saying use the large versions -->
+                        <a class="nav-link active" href="#"> <span class="fa fa-home fa-lg"></span> Home </a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./aboutus.html"> <span class="fa fa-info fa-lg"></span> About </a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"> <span class="fa fa-list fa-lg"></span> Menu </a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"> <span class="fa fa-address-card fa-lg"> </span> Contact </a>
+                    </li>
+                </ul>
+                </div>
+        </div>
+    </nav>
+    <!--Jumbotron component sets content in header tag from rest of page
+
+    We've created a custom jumbotron class in the sytles.css file.
+    Without the custom style sheet, the bootstrap default jumbotron
+    will be used.  As we've added a .jumbotron in our style sheet,
+    any differences made in this style sheet will take priority.
+
+    -->
+    <header class="jumbotron" >
+        <div class="container">
+            <!--apply our CSS class .row-header to these div tags -->
+            <div class="row row-header">
+                <!--
+                 for xsmall screens, the content within these
+                 divs will occupy the whole screen width.
+
+                 for all others sm to xl, it will occupy half (6/12)
+                 -->
+                <div class="col-12 col-sm-6">
                     <h1>Ristorante con Fusion</h1>
                     <p>We take inspiration from the World's best cuisines, and create a unique fusion experience. Our lipsmacking creations will tickle your culinary senses!</p>
                 </div>
-                <div>
+                <!-- Although no content atm, we
+                we're saying whatever we put here should:
+                xsmall: occupy whole screen
+                small - XL: ooccupy remaining columns (6-12) -->
+                <div class="col-12 col-sm">>
                 </div>
             </div>
         </div>
     </header>
+    <!-- define a container around everything between these divs
+    This allows us to arrange everything within the tags using
+    Bootstrap grid system.
 
-    <div>
-        <div>
-            <div>
+    Even without applying any rows, the white space between
+    the content and side of the view port.
+
+    adding alignment determines where in page the row content
+    will be displayed. This applies to all content in row.
+
+    -->
+    <div class="container">
+        <div class = "row row-content align-items-center">
+            <!--
+            For xsmall screens: occupy all cols (whole width)
+            for small screens: occupy first four columns
+            for medium to xl: occupy first three columns
+
+            order-sm-first/last - when content in these two
+            tags displayed side-by-side, for sm-XL, order
+            tags decided precedence from Left (first) to Right (last)
+
+            so first tag will be put on the right side and
+            second tag on left.
+            -->
+            <div class="col-12 col-sm-4 order-sm-last col-md-3">
                 <h3>Our Lipsmacking Culinary Creations</h3>
             </div>
-            <div>
+            <!--
+            xsmall screens: take up whole screen (will be
+             placed under the preceding div's content)
+            small screens: occupy the remaining 8 cols
+            medium screens: occupy the remaining 9 cols
+            -->
+            <div class="col col-sm order-sm-first col-md">
                 <h2>Uthappizza</h2>
                 <p>A unique combination of Indian Uthappam (pancake) and Italian pizza, topped with Cerignola olives, ripe vine cherry tomatoes, Vidalia onion, Guntur chillies and Buffalo Paneer.</p>
             </div>
         </div>
 
 
-        <div>
-            <div>
+        <div  class = "row row-content align-items-center">
+            <div class="col-12 col-sm-4 col-md-3">
                 <h3>This Month's Promotions</h3>
             </div>
-            <div>
+            <div class= "col col-sm  order-sm-first  col-md" >
                 <h2>Weekend Grand Buffet</h2>
                 <p>Featuring mouthwatering combinations with a choice of five different salads, six enticing appetizers, six main entrees and five choicest desserts. Free flowing bubbly and soft drinks. All for just $19.99 per person </p>
             </div>
         </div>
 
-        <div>
-            <div>
+        <div  class = "row row-content align-items-center">
+            <div class="col-12 col-sm-4 order-sm-last col-md-3">
                 <h3>Meet our Culinary Specialists</h3>
             </div>
-            <div>
+            <div class= "col col-sm order-sm-first col-md">
                 <h2>Alberto Somayya</h2>
                 <h4>Executive Chef</h4>
                 <p>Award winning three-star Michelin chef with wide International experience having worked closely with whos-who in the culinary world, he specializes in creating mouthwatering Indo-Italian fusion experiences. </p>
@@ -61,42 +210,65 @@
         </div>
     </div>
 
-    <footer>
-        <div>
-            <div>             
-                <div>
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <!--
+                 exsmall: occupy first 4 cols
+                 small - XL: occupy first 2 cols
+
+                 offset-1 applies to all screen sizes (no size param)
+                 and pushes everything 1 to right-->
+                <div class="col-4 offset-1 col-sm-2">
                     <h5>Links</h5>
-                    <ul>
+                    <!-- apply a css class to list content.
+
+                     list-unstyled class removes the default bullet points
+                     that come with un numbered lists. -->
+                    <ul class="list-unstyled">
                         <li><a href="#">Home</a></li>
-                        <li><a href="#">About</a></li>
+                        <li><a href="aboutus.html">About</a></li>
                         <li><a href="#">Menu</a></li>
                         <li><a href="#">Contact</a></li>
                     </ul>
                 </div>
-                <div>
+                <!--
+                xsmall: occupy 7 cols
+                small to XL: occupy 5 cols.
+
+                We have no cols left for xsmall and 5 left for sm-XL. -->
+                <div class="col-7 col-sm-5">
                     <h5>Our Address</h5>
                     <address>
 		              121, Clear Water Bay Road<br>
 		              Clear Water Bay, Kowloon<br>
 		              HONG KONG<br>
-		              Tel.: +852 1234 5678<br>
-		              Fax: +852 8765 4321<br>
-		              Email: <a href="mailto:confusion@food.net">confusion@food.net</a>
+		                <i class="fa fa-phone"></i>: +852 1234 5678<br>
+                        <i class="fa fa-fax"></i>: Fax: +852 8765 4321<br>
+                        <i class="fa fa-envelope"></i>: <a href="mailto:confusion@food.net">confusion@food.net</a>
 		           </address>
                 </div>
-                <div>
-                    <div>
-                        <a href="http://google.com/+">Google+</a>
-                        <a href="http://www.facebook.com/profile.php?id=">Facebook</a>
-                        <a href="http://www.linkedin.com/in/">LinkedIn</a>
-                        <a href="http://twitter.com/">Twitter</a>
-                        <a href="http://youtube.com/">YouTube</a>
+                <!--
+                xsmall: take up whole screen (seperate from previous 2 divs)
+                stacked below previous content
+
+                small to XL: occupy 4 cols.
+
+                We have no cols left for xsmall and 5 left for sm-XL. -->
+                <div class="col-12 col-sm-4">
+                    <div class="text-center">
+                        <a class="btn btn-social-icon btn-google" href="http://google.com/+">Google+ <i class="fa fa-google-plus"></i></a>
+                        <a class="btn btn-social-icon btn-facebook" href="http://www.facebook.com/profile.php?id="> <i class="fa fa-facebook"></i> Facebook</a>
+                        <a class="btn btn-social-icon btn-linkedin" href="http://www.linkedin.com/in/">LinkedIn <i class="fa fa-linkedin"></i></a>
+                        <a class="btn btn-social-icon btn-twitter" href="http://twitter.com/">Twitter <i class="fa fa-twitter"></i></a>
+                        <a class="btn btn-social-icon btn-vimeo" href="http://youtube.com/">YouTube <i class="fa fa-youtube"></i></a>
                         <a href="mailto:">Mail</a>
                     </div>
                 </div>
            </div>
-           <div>             
-                <div>
+           <div class="row justify-content-center">
+               <!-- take up any remaining space -->
+                <div class="col-auto">
                     <p>© Copyright 2018 Ristorante Con Fusion</p>
                 </div>
            </div>
