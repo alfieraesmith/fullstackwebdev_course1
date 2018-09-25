@@ -22,7 +22,8 @@
         <button class="navbar-toggler" type=button data-toggle="collapse" data-target="#Navbar">
             <span class="navbar-toggler-icon"> </span>
         </button>
-        <a class="navbar-brand mr-auto" href="#"> Restorante con Fusion </a>
+        <!-- instead of text, we'll use an image as the href button -->
+        <a class="navbar-brand mr-auto" href="#"> <img src="img/logo.png" height="30" width="41"></a>
         <div class="collapse navbar-collapse" id="Navbar">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
@@ -32,7 +33,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#"> <span class="fa fa-list fa-lg"> </span>  Menu </a>
                 <li class="nav-item">
-                    <a class="nav-link" href="#"> <span class="fa fa-list fa-address-card"> </span> Contact </a>
+                    <a class="nav-link" href="./contactus.html"> <span class="fa fa-list fa-address-card"> </span> Contact </a>
                 </li>
             </ul>
         </div>
@@ -47,6 +48,9 @@
                     <p>We take inspiration from the World's best cuisines, and create a unique fusion experience. Our lipsmacking creations will tickle your culinary senses!</p>
                 </div>
                 <div class="col-12 col-sm">
+                </div>
+                <div class="col-12 col-sm align-self-center">
+                    <img src="img/logo.png" class="img-fluid">
                 </div>
             </div>
         </div>
@@ -77,7 +81,39 @@
                 <p>Started in 2010, Ristorante con Fusion quickly established itself as a culinary icon par excellence in Hong Kong. With its unique brand of world fusion cuisine that can be found nowhere else, it enjoys patronage from the A-list clientele in Hong Kong.  Featuring four of the best three-star Michelin chefs in the world, you never know what will arrive on your plate the next time you visit us.</p>
                 <p>The restaurant traces its humble beginnings to <em>The Frying Pan</em>, a successful chain started by our CEO, Mr. Peter Pan, that featured for the first time the world's best cuisines in a pan.</p>
             </div>
-            <div>
+            <div class="col-sm">
+                <div>
+                   <h3 class="card-header bg-primary text white"> Facts At a Glance </h3>
+                    <div class="card-body">
+                        <dl class="row">
+                            <dt class="col-6"> Started </dt>
+                            <dd class="col-6"> 3 Feb. 2013 </dd>
+                            <dt class="col-6"> Major Stake Holder </dt>
+                            <dd class="col-6"> HK Fine Foods Inc. </dd>
+                            <dt class="col-6"> Last Year's Turnover </dt>
+                            <dd class="col-6"> $1,250,375 </dd>
+                            <dt class="col-6"> Employees  </dt>
+                            <dd class="col-6"> 40 </dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+            <!-- Note: No card-header wrapper div applied to this card
+              This card will have no header
+
+              Set's card apart from rest of content.
+               bg-ligh: background will be light grey color-->
+            <div class="col-12">
+                <div class="card card-body bg-light">
+                    <blockquote class="blockquote">
+                        <!-- margin bottom of 0-->
+                        <p class="mb-0">
+                        You better cut the pizza in four pieces
+                        because I'm not hungry enough for six.
+                        </p>
+                        <footer class="blockquote-footer"> Yogi Berra </footer>
+                    </blockquote>
+                </div>
             </div>
         </div>
 
@@ -98,7 +134,51 @@
                 <p class="d-none d-sm-block">Award winning three-star Michelin chef with wide International experience having worked closely with whos-who in the culinary world, he specializes in creating mouthwatering Indo-Italian fusion experiences. He says, <em>Put together the cuisines from the two craziest cultures, and you get a winning hit! Amma Mia!</em></p>
             </div>
        </div>
-
+        <div class="row row-content">
+            <!-- introduce a new row to our container and a column to
+                 house table heading and  table -->
+            <div class="col-12 col-sm-9">
+                <h2> Facts &amp; Figures </h2>
+                <!-- We're going to overule basic HTML tab by
+                 1. making our table Responsive - all elements within
+                 div tags will resize with the display.
+                 2. use a striped ("zebra") theme. -->
+                <div class="table table-responsive">
+                    <table class="table-striped">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>&nbsp;</th>
+                                <th>2013</th>
+                                <th>2014</th>
+                                <th>2015</th>
+                            </tr>
+                        </thead>
+                         <tbody>
+                            <tr>
+                                <th>Employees</th>
+                                <td>15</td>
+                                <td>30</td>
+                                <td>40</td>
+                            </tr>
+                            <tr>
+                                <th>Guests Served</th>
+                                <td>15000</td>
+                                <td>45000</td>
+                                <td>100000</td>
+                            </tr>
+                            <tr>
+                                <th>Annual Turnover </th>
+                                <td>$251, 325</td>
+                                <td>$1,250, 325</td>
+                                <td>$3, 000, 325</td>
+                            </tr>
+                         </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-12 col-sm-3">
+            </div>
+        </div>
     </div>
 
     <footer class="footer">

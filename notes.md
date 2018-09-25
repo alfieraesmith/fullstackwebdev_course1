@@ -751,11 +751,119 @@ icon fonts.
  <button> - usually used to change/submit form
  <select> 
  
+ Displaying content 
+ 
+ # Presenting Tabular content 
+ Tables (<table>) was originally implemented as a way of displaying 
+ tabular table, say a .csv file. 
+ 
+ However Devs hijacked tables as a way of displaying content.
+ Now that BS grid and other similar UI framework tools have offered 
+ a new, better, way of organising content, most modern websites that 
+ use tables employ them as intended, displaying tabular data.
+ 
+ We'll only look at displaying tabular data using table in this course, 
+ it's worth noting that table has a much wider use in older websites.
+ 
+ - How tabular content is implemented in HTML with BS.
+ 
+ 1. employ standard HTML <table> tag. 
+ 2. Wrap content with BS table classes 
+ 
+ html <table> tags:
+ ```html
+<table class="table-striped">
+    <thead class="thead-dark">
+        <tr>
+            <th>&nbsp;</th>
+            <th>2013</th>
+            <th>2014</th>
+            <th>2015</th>
+        </tr>
+    </thead>
+     <tbody>
+        <tr>
+            <th>Employees</th>
+            <td>15</td>
+            <td>30</td>
+            <td>40</td>
+        </tr>
+        <tr>
+     </tbody>
+ </table>
+```
+A standard HTML table is constructed using a tree of tags. 
+
+The top level of the tree is just the <table> tag.
+The next two levels are the table headings and table body 
+
+<thead> defines all the headings for the table 
+<tbody> defines all the table content. 
+
+<tbody> is divided itself into rows <tr> 
+each row has a row heading <th> and cell values <td> 
+
+overall the tree looks like:
+
+                                 <table>
+           <thead>                        <tbody>
+           <th> <th>....          <tr>              <tr>
+                              <th> <td> <td>     <th> <td> <td> 
+      
+We then wrap bootstrap stylings around the table tag to
+define - style, responsivness etc. 
  
  
+ BS table classes:
  
+ table-scripted - zebra style tables
+ table - bordered - for borders to table cells
+ table-sm for cutting cell padding in half
+ table-responsive - responsive design table. 
  
-    
+ # Cards
+ Cards are a versatile BS components that  allows devs to display 
+ content in millions of ways. 
+ 
+ # Image and media content:
+ 
+ Images follow the same basic UI framework as other content.
+ 
+ We use the standard <img> tag provided to us by HTML and 
+ wrap layers of BS classes ontop. 
+ 
+ ```html
+<img src="./images/image1.png" class="img-fluid">
+```
+BS image classes:
+
+img-fluid: for responsive images that scale with parent element
+img-thumbnail: thumbnail image: 
+
+A common way to BS images is to use a media class
+This combines images and text content into one container 
+caled the media object. This is helpful if when you
+need to relate images to text. 
+
+```html
+<div> class="media"
+    <img class="d-flex mr-3 img-thumbnail align-self-center"
+     src="img/alberto.png"
+     alt="Alberto Somayya">
+    <div class="media-body">
+        <h2 class="media-body"> </h2>
+        <h4>Executive chef </h4>
+    </div>
+</div>
+```
+
+Embed and Responsive Embed - 
+
+You can apply a embed responsive item to 
+<embed> <iframe> <object> to display and adjust content
+depending on the user's viewport. 
+
+
 
 
 

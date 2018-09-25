@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Ristorante Con Fusion: About Us</title>
+    <!-- Required meta tags always come first -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar navbar-dark navbar-expand-sm fixed-top">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand mr-auto" href="#"> <img src="img/logo.png" height="30" width="41"></a>
+            <div class="collapse navbar-collapse" id="Navbar">
+                <ul class="navbar-nav mr-auto">
+                        <li class="nav-item"><a class="nav-link" href="./index.html"><span class="fa fa-home fa-lg"></span> Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./aboutus.html"><span class="fa fa-info fa-lg"></span> About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#"><span class="fa fa-list fa-lg"></span> Menu</a></li>
+                        <li class="nav-item active"><a class="nav-link" href="#"><span class="fa fa-address-card fa-lg"></span> Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="jumbotron">
+        <div class="container">
+            <div class="row row-header">
+                <div class="col-12 col-sm-6">
+                    <h1>Ristorante con Fusion</h1>
+                    <p>We take inspiration from the World's best cuisines, and create a unique fusion experience. Our lipsmacking creations will tickle your culinary senses!</p>
+                </div>
+                <!-- Add a logo image to the header
+                 img-fluid: BS responsive class that adjusts
+                 image size to screen size.
+
+                 -->
+                <div class="col-12 col-sm align-self-center">
+                    <img src="img/logo.png" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="row">
+            <ol class="col-12 breadcrumb">
+                <li class="breadcrumb-item"><a href="./index.html">Home</a></li>
+                <li class="breadcrumb-item active">Contact Us</li>
+            </ol>
+            <div class="col-12">
+               <h3>Contact Us</h3>
+               <hr>
+            </div>
+        </div>
+
+        <div class="row row-content">
+           <div class="col-12">
+              <h3>Location Information</h3>
+           </div>
+            <div class="col-12 col-sm-4 offset-sm-1">
+                   <h5>Our Address</h5>
+                    <address style="font-size: 100%">
+		              121, Clear Water Bay Road<br>
+		              Clear Water Bay, Kowloon<br>
+		              HONG KONG<br>
+		              <i class="fa fa-phone"></i>: +852 1234 5678<br>
+		              <i class="fa fa-fax"></i>: +852 8765 4321<br>
+		              <i class="fa fa-envelope"></i>:
+                        <a href="mailto:confusion@food.net">confusion@food.net</a>
+		           </address>
+            </div>
+            <div class="col-12 col-sm-6 offset-sm-1">
+                <h5>Map of our Location</h5>
+            </div>
+            <div class="col-12 col-sm-11 offset-sm-1">
+                <!-- We use a div to mark out a section of buttons.
+                  "btn-group": is a BS class for a set of buttons.
+
+                   btn - * are color classes wrappers.
+                   btn-primary: specifies the color to be BS primary
+                   btn-info: use info color - 'light blue'.
+                   btn-success: use success cold - 'green'.
+
+                   *href="tel:123" will (if device is capable) will either start
+                   a call or bring up the number in their default phone application.
+                   We've also added a Font Awesome icon to indicate that user can press to call.
+
+                   *similar href:mailto will open up the email in the user's
+                    default email app, if device capable.
+
+                  -->
+                <div class="btn-group" role="group">
+                    <a role="button" class="btn btn-primary" href="tel:+85212345678"> <i class="fa fa-phone"></i> Call </a>
+                    <a role="button" class="btn btn-info" href=""><i class="fa fa-skype"></i> Skype </a>
+                    <a role="button" class="btn btn-success" href="mailto:confusion@food.net"><i class="fa fa-envelope"></i> Email </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row row-content">
+           <div class="col-12">
+              <h3>Send us your Feedback</h3>
+           </div>
+            <div class="col-12 col-md-9">
+                <div>
+                    <!-- To build a form we'll use the HTML form as the base
+                    class and wrap successive BS layers over it.
+
+                    We want our form to have mutliple input sections.
+                    The way to implement this as two sections.
+                    1. Place a divider in the form tags.
+                    2. Apply form group glass to divider
+                    3. Set the form group class to be the row.
+                    4. define a label and an input (make sure for-id relationship is made)
+                    4. Repeat for as many required form fields
+
+                    We're using first name, last name, email, phone and user message.
+                    Note: By dividing the form into five rows we are implicitly
+                    treating the <form> tag as the container.
+
+                    -->
+                    <form>
+                        <div class="form-group row">
+                            <label for="firstname" class="col-md-2 col-form-label">First Name</label>
+                            <div class="col-md-10">
+                                <!--
+                                We link our label to a text input field by using the for-id relationship.
+                                The value for argument in the label matches the value in id field of input.
+
+                                We're using BS form-control class.
+                                Placeholder is just the default text.
+                                Name is the name of the value that the user enters. JS will use this field
+                                to pick up the value the user inputs.
+
+                                The label will be next to the text box (to the left) on screens
+                                md - xl screens. On small screens, they will stack.
+                                -->
+                                <input type="text" class="form-control" id="firstname" name="firstname"
+                                    placeholder="First Name">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="lastname" class="col-md-2 col-form-label">Last Name</label>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" id="lastname" name="lastname"
+                                       placeholder="Last Name">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <!-- For  telephone number, we're going to divide the users input into
+                            two seperate input fields - area code and remaining digits
+
+                             Now that we've got twice as many input fields as any other form element,
+                             we're not going to allow the label to be placed alongside the inputs
+                             on small screens "col-12" -->
+
+                            <label for="telnum" class="col-12 col-md-2 col-form-label">Contact Tel.</label>
+                            <div class="col-5 col-md-3">
+                                <input type="tel" class="form-control" id="areacode" name="areacode"
+                                       placeholder="Area Code">
+                            </div>
+                            <div class="col-7 col-md-7">
+                                <input type="text" class="form-control" id="telnum" name="telnum"
+                                       placeholder="Tel. Number">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="emailid" class="col-md-2 col-form-label">Email</label>
+                            <div class="col-md-10">
+                                <input type="email" class="form-control" id="emailid" name="email"
+                                       placeholder="Email">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                           <div class="col-md-6 offset-md-2">
+                            <div class="form-check"></div>
+                               <!-- This checkbox has two unique features from the preceeding form elements
+                                1. we want the label after the input field.
+                                2. we want to offset the checkbox 2 cols from left margin-->
+                               <input type="checkbox" class="form-check-input"
+                                    name="approve" id="approve" value="">
+                               <label  class="form-check-label" for="approve"> <strong>May we contact you? </strong></label>
+                           </div>
+                            <div class="col-md-3 offset-md-1">
+                                <select class="form-control">
+                                    <option value="Telephone"></option>
+                                    <option value=" Email"></option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="feedback" class="col-md-2 col-form-label">Your Feedback </label>
+                            <div class="col-md-10">
+                                <!--
+                                We don't want to use an input tag here, we'll use text area
+                                instead. This is very similar to input but it's not a defined
+                                field with a label, rather a free-text area with less rectricitons.
+
+                                rows=12 says how many rows should he free text area occupy by default.
+
+                                -->
+                                <textarea class="form-control" id="feedback" name="feedback"
+                                          rows="12"> </textarea>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="offset-md-2 col-md-10"></div>
+                            <button type="submit" class="btn btn-primary"> Send Feedback </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+             <div class="col-12 col-md">
+            </div>
+       </div>
+
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">             
+                <div class="col-4 offset-1 col-sm-2">
+                    <h5>Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Menu</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-7 col-sm-5">
+                    <h5>Our Address</h5>
+                    <address>
+		              121, Clear Water Bay Road<br>
+		              Clear Water Bay, Kowloon<br>
+		              HONG KONG<br>
+                      <i class="fa fa-phone fa-lg"></i>: +852 1234 5678<br>
+                      <i class="fa fa-fax fa-lg"></i>: +852 8765 4321<br>
+                      <i class="fa fa-envelope fa-lg"></i>: 
+                      <a href="mailto:confusion@food.net">confusion@food.net</a>
+		           </address>
+                </div>
+                <div class="col-12 col-sm-4 align-self-center">
+                    <div class="text-center">
+                        <a class="btn btn-social-icon btn-google" href="http://google.com/+"><i class="fa fa-google-plus"></i></a>
+                        <a class="btn btn-social-icon btn-facebook" href="http://www.facebook.com/profile.php?id="><i class="fa fa-facebook"></i></a>
+                        <a class="btn btn-social-icon btn-linkedin" href="http://www.linkedin.com/in/"><i class="fa fa-linkedin"></i></a>
+                        <a class="btn btn-social-icon btn-twitter" href="http://twitter.com/"><i class="fa fa-twitter"></i></a>
+                        <a class="btn btn-social-icon btn-google" href="http://youtube.com/"><i class="fa fa-youtube"></i></a>
+                        <a class="btn btn-social-icon" href="mailto:"><i class="fa fa-envelope-o"></i></a>
+                    </div>
+                </div>
+           </div>
+           <div class="row justify-content-center">             
+                <div class="col-auto">
+                    <p>© Copyright 2018 Ristorante Con Fusion</p>
+                </div>
+           </div>
+        </div>
+    </footer>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS. -->
+    <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>

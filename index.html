@@ -83,7 +83,7 @@
 
                mr-auto: automatically introduce white margine around nav-bar-barnd
             -->
-          <a class="navbar-brand mr-auto" href="#"> Restorante con Fusion </a>
+            <a class="navbar-brand mr-auto" href="#"> <img src="img/logo.png" height="30" width="41"></a>
                 <!-- we create the actual set of navigation buttons by using
                  an un-numbered list and wrapping BS' navbar-nav class around it
 
@@ -110,7 +110,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#"> <span class="fa fa-list fa-lg"></span> Menu </a>
                     <li class="nav-item">
-                        <a class="nav-link" href="#"> <span class="fa fa-address-card fa-lg"> </span> Contact </a>
+                        <a class="nav-link" href="./contactus.html"> <span class="fa fa-address-card fa-lg"> </span> Contact </a>
                     </li>
                 </ul>
                 </div>
@@ -143,6 +143,9 @@
                 xsmall: occupy whole screen
                 small - XL: ooccupy remaining columns (6-12) -->
                 <div class="col-12 col-sm">>
+                </div>
+                <div class="col-12 col-sm align-self-center">
+                    <img src="img/logo.png" class="img-fluid">
                 </div>
             </div>
         </div>
@@ -182,8 +185,27 @@
             medium screens: occupy the remaining 9 cols
             -->
             <div class="col col-sm order-sm-first col-md">
-                <h2>Uthappizza</h2>
-                <p>A unique combination of Indian Uthappam (pancake) and Italian pizza, topped with Cerignola olives, ripe vine cherry tomatoes, Vidalia onion, Guntur chillies and Buffalo Paneer.</p>
+                <!-- Introduce a media class to wrap round images and text
+
+                BS media classes work by creating a div-media class
+                and enclosing one/more images and one/more text classes.
+
+                Generally, you put the text classes (h1,h2...p) within
+                the media body. This helps BS align the images to the text.
+
+                      BS classes:
+                      d-flex:
+                      mr-3: margin right 3 columns.
+                      img-thmbnail: class for displaying images next to text
+                 -->
+                <div class="media">
+                    <img class="d-flex mr-3 image-thumbnail align-self-center"
+                        src="img/uthappizza.png" alt="uthapizza">
+                    <div class="media-body">
+                    <h2 class="mt-0"> Uthappizza </h2>
+                    <p>A unique combination of Indian Uthappam (pancake) and Italian pizza, topped with Cerignola olives, ripe vine cherry tomatoes, Vidalia onion, Guntur chillies and Buffalo Paneer.</p>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -203,9 +225,15 @@
                 <h3>Meet our Culinary Specialists</h3>
             </div>
             <div class= "col col-sm order-sm-first col-md">
-                <h2>Alberto Somayya</h2>
-                <h4>Executive Chef</h4>
-                <p>Award winning three-star Michelin chef with wide International experience having worked closely with whos-who in the culinary world, he specializes in creating mouthwatering Indo-Italian fusion experiences. </p>
+                <div class="media">
+                    <img class="d-flex mr-3 align-self-center img-thumbnail"
+                         src="img/alberto.png", alt="alberto">
+                    <div class="media-body">
+                        <h2>Alberto Somayya</h2>
+                        <h4>Executive Chef</h4>
+                        <p>Award winning three-star Michelin chef with wide International experience having worked closely with whos-who in the culinary world, he specializes in creating mouthwatering Indo-Italian fusion experiences. </p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
