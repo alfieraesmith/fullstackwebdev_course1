@@ -863,6 +863,72 @@ You can apply a embed responsive item to
 <embed> <iframe> <object> to display and adjust content
 depending on the user's viewport. 
 
+# Alerts -
+alerts are used to inform users of changes to content, of the internal workings
+of the side (e.g. a file export being ready) etc. 
+
+alert mechanisms:
+
+badges: draw attentions to recent updates to web page or to parts of the site. 
+alert/error/warning messages: gives user feedback on their actions
+progress bars: keep users informed on the internal workings of site. 
+
+```html
+<h2 class="media-heading"> Uthappizza 
+    <span class="badge badge-danger"> HOT </span>
+    <span class="badge badge-pill badge-secondary"> $4.99 </span>
+</h2>
+```
+#badges - 
+
+we create badges by applying 'badge' BS class to span tags. 
+We're effectively wrapping the span text within an image.
+
+badge-danger: color th badge red and give it very sharp edges
+badge-pill: grey, pill shape wrapper to text. 
+
+#Alert 
+Alerts created using the alert class (apply to div class)
+Alerts can be different cols, include links and be dismissable 
+
+BS class:
+alert: base BS alert class 
+alert-warning 
+alert-dismissible - user can click x to remove alert 
+
+#Progress bar: 
+apply the progress class to the div and then apply 'progress bar' to inner div
+base class: 'progress'
+
+```html
+
+<div class="progress"></div>
+    <div class="progress-bar progress-bar-striped bg-danger"
+    role="progressbar", style="width:80%"></div>
+</div> 
+```
+
+#Tabs and Pills
+
+A big improvement on earlier web pages is the ability for web pages to 
+selectively show content. Content is withheld and revealed through 
+the use of Tabs and Pills. 
+
+Tabs and Pills provide new content WITHOUT having to reload the page. 
+
+Tabular navigation:
+
+Identical in concept to how tabs work in browser, content is hidden
+behind a tab until the tab is selcted by the user.
+
+Content is organised into tab panes and the user navigates using 
+tab navigation elements. 
+
+We'll use the <nav> class and further qualify with 
+nav-tabs class. 
+
+
+
 
 
 
