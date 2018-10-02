@@ -113,9 +113,73 @@
                         <a class="nav-link" href="./contactus.html"> <span class="fa fa-address-card fa-lg"> </span> Contact </a>
                     </li>
                 </ul>
+                    <span class="navbar-text">
+                    <a data-toggle="modal" data-target="#loginModal">
+                        <span class="fa fa-sign-in"> Login </span>
+                    </a>
+                    </span>
                 </div>
         </div>
     </nav>
+    <!-- BS advises all modal code be implemented at top of page after
+    header and navigation
+
+    modal: we'll implement a login modal class hierarchy
+    follows the pattern of a whole web page.
+
+    define what modal kind (login, captcha...)
+    define how modal will be presented (modal-dialog, modal-lg)
+    define modal header, modal body
+
+    our modal header will contain a button to dismiss it
+    our modal body will contain a form (login form)
+
+
+     -->
+
+    <div id="loginModal" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-lg" role="content">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title"> Login </h4>
+                    <button type="button" class="close" data-dismiss="modal">
+                        &times;
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-row">
+                            <div class="form-group col-sm-4">
+                                <label class="sr-only" for="exampleInputEmail3">Email address</label>
+                                <input type="email" class="form-control form-control-sm mr-1" id="exampleInputEmail3" placeholder="Enter email">
+                            </div>
+                            <div class="form-group col-sm-4">
+                                <label class="sr-only" for="exampleInputPassword3">Password</label>
+                                <input type="password" class="form-control form-control-sm mr-1" id="exampleInputPassword3" placeholder="Password">
+                            </div>
+                            <div class="col-sm-auto">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox">
+                                    <label class="form-check-label"> Remember me
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <button type="button" class="btn btn-secondary btn-sm ml-auto" data-dismiss="modal">Cancel</button>
+                            <button type="submit" class="btn btn-primary btn-sm ml-1">Sign in</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
     <!--Jumbotron component sets content in header tag from rest of page
 
     We've created a custom jumbotron class in the sytles.css file.
@@ -146,7 +210,11 @@
                     <img src="img/logo.png" class="img-fluid">
                 </div>
                 <div class="col-12 col-sm-4 align-self-center">
-                    <a role="button" class="btn btn-warning text-dark" href="#FORM"> <strong> Reserve a Tale </strong> </a>
+                    <a role="button" class="btn btn-warning text-dark"
+                       data-toggle="tooltip" data-html="true"
+                       title="Or call us at <strong> +852 12345678 </strong>"
+                       href="#FORM"
+                       data-placement="bottom"> <strong> Reserve a Tale </strong></a>
                 </div>
             </div>
         </div>
@@ -163,6 +231,66 @@
 
     -->
     <div class="container">
+        <!--  Creating a carousel - slide show of content that
+             the user can navigate through using slider/tabs etc.
+             -->
+        <div class="row row-content">
+            <!-- We've defined a new row in our container and established
+             that the carousel will act as a col within row.
+
+              data-ride: another javascript component link -->
+            <div class="col">
+                <div id="mycarousel" class="carousel slide" data-ride="carousel">
+
+                    <!-- add in carousel content. Carousel inner acts as the body
+                     class, we'll add carousel item divs for each piece of content-->
+                    <div class="carousel-inner" role="listbox">
+                        <div class="carousel-item active">
+                            <img class="d-block img-fluid"
+                                 src="img/uthappizza.png" alt="uthappizza">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h2> Uthappizza <span class="badge badge-danger"> HOT</span> <span class="bady badge-pill badge-secondary">$4.99</span></h2>
+                                <p class="d-none d-sm-block">A unique combination of Indian Uthappam (pancake) and Italian pizza, topped with Cerignola olives, ripe vine cherry tomatoes, Vidalia onion, Guntur chillies and Buffalo Paneer.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block img-fluid" src="img/buffet.png" alt="buffet">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h2>Weekend Grand Buffet <span class="badge badge-danger"> New </span></h2>
+                                <p class="d-none d-sm-block">Featuring mouthwatering combinations with a choice of five different salads, six enticing appetizers, six main entrees and five choicest desserts. Free flowing bubbly and soft drinks. All for just $19.99 per person </p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block img-fluid" src="img/alberto.png" alt="alberto">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h2>Alberto Somayya</h2>
+                                <h4>Executive Chef</h4>
+                                <p class="d-none d-sm-block">Award winning three-star Michelin chef with wide International experience having worked closely with whos-who in the culinary world, he specializes in creating mouthwatering Indo-Italian fusion experiences. </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- indicate what slide in carousel is currently shown -->
+                <ol class="carousel-indicators">
+                    <li data-target="#mycarousel" data-slide-to="0" class="active"> </li>
+                    <li data-target="#mycarousel" data-slide-to="1"></li>
+                    <li data-target="#mycarousel" data-slide-to="2"></li>
+                </ol>
+                <a class="carousel-control-prev" href="#mycarousel" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon"> </span></a>
+                <a class="carousel-control-next" href="#mycarousel" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon"> </span></a>
+
+                <div class="btn-group" id="carouselButton">
+                    <button class="btn btn-danger btn-sm" id="carousel-pause">
+                        <span class="fa fa-pause"> </span>
+                    </button>
+                    <button class="btn btn-danger btn-sm" id="carousel-play">
+                        <span class="fa fa-play"> </span>
+                    </button>
+                </div>
+            </div>
+        </div>
         <div class = "row row-content align-items-center">
             <!--
             For xsmall screens: occupy all cols (whole width)
@@ -374,6 +502,30 @@
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script>
+        /* We've set the button.data-toggle attribute to tooltip above.
+         * This is saying whenever any content is tagged with tool-tip,
+          * turn on the tooltip  */
+        $(document).ready(function(){
+            $('[data-toggle="tooltip"]').tooltip();
+            })
+    </script>
+    <script>
+        $(document).ready(function() {
+            $('#mycarousel').carousel({interval:2000});
+
+            /* for the elements in the document (when ready) that have the
+            * id carousel-pause (our pause button above), when the user clicks
+             * (.click is an event method), execute this function
+             * which in turn finds the carousel element and pauses it*/
+            $('#carousel-pause').click(function() {
+                $('#mycarousel').carousel('pause');
+            });
+            $('#carousel-play').click(function() {
+                $('#mycarousel').carousel('cycle');
+            });
+        });
+    </script>
 </body>
 
 </html>

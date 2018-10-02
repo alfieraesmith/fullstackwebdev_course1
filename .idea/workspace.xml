@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="114f4014-19d6-4b5c-9771-f304573b1eda" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/code_archive.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/aboutus.html" beforeDir="false" afterPath="$PROJECT_DIR$/aboutus.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/notes.md" beforeDir="false" afterPath="$PROJECT_DIR$/notes.md" afterDir="false" />
     </list>
@@ -25,18 +28,18 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="css" value="4" />
+          <entry key="css" value="7" />
           <entry key="gitignore" value="2" />
           <entry key="handlebars;hbs;mustache" value="1" />
-          <entry key="html" value="22" />
+          <entry key="html" value="25" />
           <entry key="json" value="2" />
           <entry key="md" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CSS" value="4" />
-          <entry key="HTML" value="22" />
+          <entry key="CSS" value="7" />
+          <entry key="HTML" value="25" />
           <entry key="JSON" value="2" />
           <entry key="Markdown" value="9" />
           <entry key="PLAIN_TEXT" value="2" />
@@ -45,19 +48,20 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="css" value="897" />
+          <entry key="css" value="1453" />
           <entry key="gitignore" value="16" />
-          <entry key="html" value="17847" />
+          <entry key="html" value="23294" />
           <entry key="json" value="58" />
-          <entry key="md" value="22570" />
+          <entry key="md" value="27582" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="903" />
-          <entry key="HTML" value="17924" />
+          <entry key="CSS" value="1459" />
+          <entry key="HTML" value="23382" />
           <entry key="JSON" value="58" />
-          <entry key="Markdown" value="22487" />
+          <entry key="JavaScript" value="2" />
+          <entry key="Markdown" value="27486" />
           <entry key="PLAIN_TEXT" value="16" />
         </counts>
       </usages-collector>
@@ -65,32 +69,41 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/notes.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="FIRST">
-              <first_editor relative-caret-position="468">
-                <caret line="929" selection-start-line="929" selection-end-line="929" />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/aboutus.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3">
-              <caret line="5" selection-start-line="5" selection-end-line="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="354">
-              <caret line="375" column="75" lean-forward="true" selection-start-line="372" selection-start-column="3" selection-end-line="375" selection-end-column="75" />
+            <state relative-caret-position="395">
+              <caret line="520" column="51" selection-start-line="520" selection-start-column="51" selection-end-line="520" selection-end-column="51" />
+              <folding>
+                <element signature="e#6445#6452#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/aboutus.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1077">
+              <caret line="212" column="54" lean-forward="true" selection-start-line="212" selection-start-column="54" selection-end-line="212" selection-end-column="54" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/code_archive.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="479">
+              <caret line="50" selection-start-line="50" selection-end-line="50" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/css/styles.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="487">
+              <caret line="80" lean-forward="true" selection-start-line="80" selection-end-line="80" />
             </state>
           </provider>
         </entry>
@@ -118,11 +131,12 @@
       <list>
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/css/styles.css" />
         <option value="$PROJECT_DIR$/contactus.html" />
-        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/code_archive.html" />
         <option value="$PROJECT_DIR$/aboutus.html" />
         <option value="$PROJECT_DIR$/notes.md" />
+        <option value="$PROJECT_DIR$/css/styles.css" />
+        <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
   </component>
@@ -141,8 +155,8 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="676" />
-    <option name="width" value="697" />
+    <option name="x" value="647" />
+    <option name="width" value="726" />
     <option name="height" value="735" />
   </component>
   <component name="ProjectLevelVcsManager">
@@ -206,20 +220,20 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1537724964912</updated>
-      <workItem from="1537724966541" duration="51769000" />
+      <workItem from="1537724966541" duration="65324000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="51769000" />
+    <option name="totallyTimeSpent" value="65324000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="676" y="0" width="697" height="735" extended-state="0" />
+    <frame x="647" y="0" width="726" height="735" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info active="true" content_ui="combo" id="Project" order="2" visible="true" weight="0.06980273" />
+      <window_info content_ui="combo" id="Project" order="2" weight="0.031866465" />
       <window_info anchor="bottom" id="Terminal" order="0" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="2" show_stripe_button="false" />
@@ -238,7 +252,7 @@
     <layout-to-restore>
       <window_info id="Favorites" order="0" side_tool="true" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info active="true" content_ui="combo" id="Project" order="2" visible="true" weight="0.07068452" />
+      <window_info content_ui="combo" id="Project" order="2" visible="true" weight="0.031866465" />
       <window_info anchor="bottom" id="Terminal" order="0" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="2" show_stripe_button="false" />
@@ -286,34 +300,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/styles.css">
+    <entry file="file://$PROJECT_DIR$/aboutus.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="62">
-          <caret line="22" column="8" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
+        <state relative-caret-position="-1077">
+          <caret line="212" column="54" lean-forward="true" selection-start-line="212" selection-start-column="54" selection-end-line="212" selection-end-column="54" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
+    <entry file="file://$PROJECT_DIR$/code_archive.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="354">
-          <caret line="375" column="75" lean-forward="true" selection-start-line="372" selection-start-column="3" selection-end-line="375" selection-end-column="75" />
+        <state relative-caret-position="479">
+          <caret line="50" selection-start-line="50" selection-end-line="50" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/notes.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="468">
-            <caret line="929" selection-start-line="929" selection-end-line="929" />
+          <first_editor relative-caret-position="391">
+            <caret line="1063" column="33" selection-start-line="1063" selection-start-column="33" selection-end-line="1063" selection-end-column="33" />
           </first_editor>
           <second_editor />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/aboutus.html">
+    <entry file="file://$PROJECT_DIR$/css/styles.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        <state relative-caret-position="487">
+          <caret line="80" lean-forward="true" selection-start-line="80" selection-end-line="80" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="395">
+          <caret line="520" column="51" selection-start-line="520" selection-start-column="51" selection-end-line="520" selection-end-column="51" />
+          <folding>
+            <element signature="e#6445#6452#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

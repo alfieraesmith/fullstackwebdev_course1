@@ -927,6 +927,174 @@ tab navigation elements.
 We'll use the <nav> class and further qualify with 
 nav-tabs class. 
 
+# Accordion and the collapse plugin 
+
+The collapse plugin provides a quick way of revealing and hiding
+content 
+
+Toggling of content reuqires the use of a button or link to trigger
+the toggle
+
+An example of the collapse plugin is when we set the navigation
+bar to collapse on xsm 
+
+We use a button that has data-toggle = collapse attribute 
+and an id that refers to the content. 
+
+Accordion is very similar to a tab however it uses cards to house each
+individual piece of content and the collapse plugin to hide/display content.
+
+# Tooltips, Popovers and modals 
+All three are tools for revealing content upon interacting with 
+an element on the web page
+
+Information displayed using an overlay 
+
+There's a flexibility/difficulty tradeoff 
+
+tooltip (least flexibile, easiest to implement)
+popover 
+modal (most flexible, hardest to implement)
+
+tooltips display a small amount of info if user hovers a
+selected area (e.g. a button) 
+
+popovers - user has to explicitly click on button/area 
+user must then click again to continue. 
+
+modal  - more detailed than tool tip/popovers
+        - contains header, body, footer,
+        - you can use bootstrap gird in body. 
+        
+For example, a login form could be implemented with a login 
+by displaying a login form that captures the required info
+
+# How Bootstrap interacts with Jquery
+1. Bootstrap's JavaScript support is through JS plugins
+2. These JS plugins are almost all based on JQuery. 
+3. Plugins can be individually or collectively included. 
+
+JS components can be used either directly (by writing custom JS code) or
+, as we have used so far, by calling data-* attributes. 
+
+These data-* attributes allow devs to call JS components without
+having to write any JS. 
+
+Examples: data-toggle, data-spy, data-manipulate 
+
+# JQUERY - 
+* lightweight JS library
+* Feature rich -
+    * HTML/DOM manipulation
+    * CSS manipulation
+    * HTML event methods
+    * effects/animations
+    * AJAX (interact with backend servers)
+    
+    + Bootstrap JS components are built upon JQuery. 
+    
+JQuery syntax:
+
+$(selector).action()
+
+$: always called in JS scripts using the $.The global variable name for the 
+library is $.
+selector:  used to query and find HTML page within DOM that you want 
+to apply manipulations. 
+action: now HTML is selected, what action do you want to perform? 
+
+how to specify selectors:
+
+1. refer to elements within specific HTML tags - "p" - refers to all p tags 
+2. refer to elements by id - "#something" - refers to a specific element with id 'something'
+3. refer to elements by classes applied to it - ".btn" - all elements that have had BS btn button 
+                                                          class applied to it. 
+4. by attribute value  - '[data-toggle="tooltip"]' - refers to all elements that have data-toggle attribute
+                                                     set to the value 'tooltip'
+5. current element - $(this) - for the current element that's already selected
+6. by keyword - document, header - known words that refer to specific 
+                                   sections of DOM. 
+
+
+```js
+$("p").hide();
+$("#mycarousel").carousel('pause');
+```
+1. select all html elements that are paragraph elements (<p>) and hide them.
+2. select the html content tagged as 'id=mycarousel' and pause it.
+   
+# Tooltip example 
+
+```html
+<script >
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();
+});
+</script>
+```
+
+The selector in this example is the document as a whole (all elements in DOM)
+The action is ready, or 'execute this function when the document is ready'
+
+The input to any function defined on the fly like this is the selector.
+In this case, the function is being applied to whole DOM.
+
+Select those elements in DOM with an attribute called data-toggle 
+that is set to tool tip. For those elements, perform the action
+called tooltip.
+
+tooltip() just turns tooltips on. 
+
+JQuery Events:
+User interactions on web page cause DOM events 
+where JQuery picks up on user event and manipulates DOM in response. 
+
+user events:
+* mouse: click, mouseleave, mousemove
+* keyboard: keypress, keyup/down
+* form: submit, change
+* Document, Window: load, resize, scroll 
+
+Jquery common event methods - 
+ready(), click(), dbclick(), mousedown(), on()
+
+#controlling a property of an element in JQuery 
+```js
+$('.carousel').carousel({interval:2000});
+$('.carousel').carousel('cycle');
+```
+
+Find the elements with BS class carousel applied. 
+Apply this carousel action to it. 
+Set the interval sliding to be 2000ms (2seconds)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

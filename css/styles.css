@@ -46,3 +46,35 @@ body {
 .navbar-dark{
     background-color:#512DAB;
 }
+
+.tab-content{
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+}
+
+.carousel{
+    background: #512DAB;
+}
+
+.carousel-item{
+    height:300px;
+}
+
+.carousel-item img {
+    position: absolute;
+    /* Image does not move relative to text.
+    set the image to the top left corner and expand to 3x height */
+    top: 0;
+    left: 0;
+    min-height: 300px;
+}
+
+/* .class #id - . refers all elements of class, # refers to elements by id */
+#carouselButton{
+    right: 0px;
+    position:absolute;
+    bottom:0px;
+}
+
