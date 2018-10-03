@@ -1069,6 +1069,109 @@ Apply this carousel action to it.
 Set the interval sliding to be 2000ms (2seconds)
 
 
+# CSS preprocessors: Less and Sass
+CSS is great for defining styles and repeatedly 
+reapplying styles to various html elements. 
+
+CSS code is limited in its syntax because its 
+not a scripting programming language. 
+
+For example - no easy way of defining variables,
+              nesting selections, expressions,
+              functions
+
+This limits what you can do with basic CSS and 
+also writing CSS cumbersome and hard to maintain. 
+
+CSS preprocessors expand CSS functionality. You
+write in Sass or Less and when the scripts, which 
+are then compiled into traditional CSS syntax
+automatically before use in web page. 
+
+Bootstrap4 is built using Sass as it's source. Bootstrap3
+used Less but migrated to SASS when upgrading.  
+
+If you want to customize BS, you have to work with
+SASS code. 
+
+Core featues that preprocessors add:
+1. variables
+2. nesting
+3. mixins
+4. functions/conditionality 
+
+Scss is a flavour of SASS and it's a smaller, simplified 
+version of SASS. 
+
+# variables 
+
+```scss
+$lt-gray:#ddd;
+$background-dark: #512DA8;
+```
+We can then apply the two variables lt-grey and 
+background color to any relevant CSS classes. 
+If we need to change the value, we only need 
+to change the variable value. 
+
+# Nesting 
+
+```scss
+
+.carousel{
+background:$background-dark;
+    .carousel-item {
+    height: $carousel-item-height;
+    .img{
+      top:0;
+      min-height: 300px;
+    }
+  }
+ }
+
+```
+
+# mixins - 
+
+mixins hold multiple css declarations unlike variables 
+
+```scss
+@mixin zero-margin{
+  margin:0px auto;
+  background:$white;
+}
+```
+# Compilling css preprocessors 
+
+To use a CSS preporcessor(SASS, LESS), we have to install
+a compiler that will take our .scss or .less files and convert
+them to css. 
+
+We'll use NPM packages for both. 
+
+For less - 
+ npm install -g less@2.7
+ Installs lessc compiler. 
+ 
+ compile less to css by running on cmd - 
+ lessc syles.less syles.css 
+ lessc <less file> <name of new css file> 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+
+
+
 
 
 
