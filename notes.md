@@ -1157,8 +1157,315 @@ For less -
  lessc syles.less syles.css 
  lessc <less file> <name of new css file> 
  
+for SASS:
+npm install --save-dev node-sass@4.7.2 
+
+because we'll be using SASS going forward, we'll implement 
+the compile them in a more formal way than running 
+some cmd code.
+
+1. write .scss or .sass script
+2. update package.json scripts section to include  "scss":"node-sass -o css/ css/"
+3. run on cmd: npm run css 
+this should convert all .scss into css files with the same name but 
+different file ext. 
+
+# building and deployment 
+
+Once all the web pages have been written, there's another set of issues to tackle.
+
+- how do we build the website? 
+    - ensure that css preprocessors are compiled before page is displayed 
+    - ensure JS scripts/packages are available 
+    - ensure cross-browser and platform support 
+    - define and install all server side dependencies 
+    - concatenation of various script files 
+    - error handling 
+    - versioning and deploying changes 
+   
+- how do we deploy it to a web server so as to make it publically available
+
+Web development and deployment involves a lot of repetitive tasks.
+A series of patterns and software have been developed to automate these
+ deployment tasks because of the DRY principle (don't repeat yourself)
+
+# deploying CSS 
+
+CSS preprocessors need to be compiled into a .css file BEFORE the web page
+is loaded. 
+
+We may need to do vendor prefixes - compiling that depends on the browser - 
+and this is were autoprefixers come in. 
+
+# minification - 
+Removing any unnecessary characters (white lines, new lines, comments)
+from source code without compromising functionality. 
+
+There's a general rule in web development that production files should
+contain the minimum number of characters possible while retaining all
+functionality. 
+
+This has several benefits - web pages are loaded faster because there's less
+char for the browser to read etc. 
+
+#Concatenation 
+
+Often .css and .js files are split between different files. 
+Often developers will use deployment tools to 
+concatenate these scripts together into one file before the web site
+is deployed. This reduces loading time as the browser doesn't have
+to read different files. 
+
+# JS code error handling 
+JSHint: checking javascript code for error and potential problems. 
+
+# uglification: minification + mangling (reducing local variables to single letters)
+
+# other tasks:
+image optimization: optimizing files to reduce size and ensure that 
+                     images are displayed correctly across browsers/viewports 
+
+watch: watching for changes in files and automatically rerunning tasks 
+       such as concatenation, uglification, error checking. 
+       
+server and live-reload: ensure code is being server up so we can 
+view changes to the code. The lite-server being used in this course 
+is one example of software that has live-reload functionality. 
+
+# task runners - automating tasks using npm scripts 
+
+we can short-hand command line prompts for npm by using scripts within
+our package.json file 
+
+"node-sass -o css/ css/" is a very basic npm script for compiling our 
+SASS into a .css file.  We can then execute this "script" by typing npm run scss
+
+  
+```json
+"scripts": {
+    "start": "npm run lite",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lite": "lite-server",
+    "scss":"node-sass -o css/ css/"
+  }
+```
+we'll build on this by writing a complicated npm script that 
+we can execute completely with one command npm run X
+
+1. we'v moved all the javascript from script tags to separate js file 
+and added that to be loaded in each webpage.
+2. set up a npm task for recompiling SASS into css every time there's a 
+change using npm module - you can use either Watch or onchange 
+
+npm install --save-dev onchange@3.3.0 parallelshell@3.0.2
+
+parallelshell is another npm package that allows multiple npm scripts to 
+be run at the same time
+
+we need to add watch as a script in our package.json 
+
+```json
+"start": "npm run watch:all",
+"watch:scss": "onchange 'css/*.scss' --npm run scss",
+"watch:all": "parallelshell \"npm run watch:scss\" \"npm run lite\""
+
+```
+changing our package.json to this means:
+
+when we start out server, we trigger watch:all, which in turn 
+triggers the compiling of the sass into css, starts the server, 
+and starts onchange watching for changes to any .scss file within
+the /css folder. 
+
+With just 'start' we've started web-server, compiled sass into css and 
+started a watching task (onchange) that will recompile scss if any
+.scss files change. 
+
+# concatenation of css and js files
+
+To minimise the number of downloads the browser has to compelete before rendering 
+our website, we'll combine all our .css files into one file and all our js code
+into one file. 
+
+Ultimately, we want to set up a /dist folder that contains a copy of all 
+the requirments to host our website on the webserver (requirements file, task runners) 
+and all the code required by browsers to render our website (HTML pages, css, js)
+Using the minimum numbre of files (concatenation) and characters possible (uglification)
+
+basic steps for creating a dist folder:
+
+1. set up a task for cleaning out the /dist folder using rimraf 
+ * install rimraf from npm:  npm install --save-dev rimraf@2.6.2 
+ * set up new npm script:  "clean": "rimraf dist/"
  
+2. set up a task for copying the font/icon files into the dist folder using copyfiles
+ * install copy files globally:  npm -g install copyfiles@2.0.0 
+ -- this means that npm is installing copyfiles globally  
+ -- has to be run in admin cmd if windows or sudo if linux/mac 
+ *  set up npm script: "copyfonts":"copyfiles -f node_modules/font-awesome/fonts/* dist/fonts"
  
+ 3. compress image files (reducing data browser has to download) using imagemin
+ * install imagemin globally: npm -g install imagemin-cli@3.0.0
+ * set up script for minifying images:  "imagemin":"imagemin img/* -o dist/img"
+ 
+ -- minimise all images im my /img dir and copy to a sub dir of dist called img
+ 
+ 4. add dist folder to .gitignore so we're not pushing temp files to git. 
+ 
+ 5. concatenate our .css .js and reduce our HTML files 
+ *install usemin-cli@0.5.1 and its 3 related node modules:
+npm install --save-dev usemin-cli@0.5.1 cssmin@0.4.3 uglifyjs@2.4.11 htmlmin@0.0.7
+ * add markup to our webpages that tells usemin where the css and js file groups are.
+ 
+ add markup before and after the css link tags in the index script header 
+ This tells usemin that it needs to build the following css files into 
+ a single new script called main.css
+ 
+ ```html
+<!--build:css css/main.css -->
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- endbuild -->
+```
+ 
+ add markup before and after the group of .js files in the footer at bottom of page 
+ ```html
+<!-- build:js js/main.js -->
+    <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
+    <!-- endbuild -->
+```
+ 
+* setup minification scripts
+     "usemin":"usemin contactus.html -d dist --htmlmin -o dist/contact.html && usemin aboutus.html -d dist --htmlmin -o dist/aboutus.html && usemin index.html -d dist --htmlmin -o dist/index.html",
+
+-- usemin doesn't take wildcards so we have to specifiy each script we want need to minify individually 
+-- htmlmin is also being used to uglify the html to reduce chars 
+
+6. set up build scripts that runs all steps required to build dist folder 
+*    "build": "npm run clean && npm run copyfonts && npm run imagemin && npm run usemin"
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  
  
  
